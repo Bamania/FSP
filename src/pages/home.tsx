@@ -26,11 +26,11 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden font-['Comic_Sans_MS',_cursive] relative">
+    <div className="min-h-screen bg-white overflow-hidden font-sans relative">
       {/* Notebook paper background */}
       <div className="w-full min-h-screen relative bg-white">
         {/* Horizontal ruled lines */}
-        {Array.from({ length: 45 }).map((_, i) => (
+        {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={`h-line-${i}`}
             className="absolute w-full h-[1px] bg-blue-100"
@@ -38,25 +38,24 @@ const Home: React.FC = () => {
           />
         ))}
         {/* Vertical margin line */}
-        <div className="absolute h-full w-[1px] bg-red-400 left-[120px]" />
+        <div className="absolute h-full w-[1px] bg-red-400 left-[12px]  md:block" />
         {/* Main content container */}
-        <div className="max-w-[1000px] mx-auto pt-10 pb-20 px-8 relative">
+        <div className="max-w-[1000px] mx-auto pt-6 md:pt-10 pb-20 px-4 md:px-8 relative ml-[10px] md:ml-[10px]">
           {/* Header with avatar and name */}
-          <div className="flex items-center justify-center mb-12 mt-8">
-            <div className="relative">
+          <div className="flex flex-col md:flex-row items-center justify-center mb-8 md:mb-12 mt-4 md:mt-8">
+            <div className="relative flex flex-col md:flex-row items-center">
               {/* Avatar container */}
-              <div className="w-[120px] h-[120px] relative mr-6">
-              <div className="w-full h-full rounded-full border-2 border-black relative overflow-hidden">
+              <div className="w-[80px] h-[80px] md:w-[120px] md:h-[120px] relative mb-4 md:mb-0 md:mr-6">
+                <div className="w-full h-full rounded-full border-2 border-black relative overflow-hidden">
                   <img
                     src="https://bamania.blob.core.windows.net/portfolio/pf1.jpg"
                     alt="Avatar"
                     className="w-full h-full object-cover"
                   />
-                
                 </div>
               </div>
               {/* Name */}
-              <div className="text-7xl font-bold tracking-wide transform -rotate-1 ml-4">
+              <div className="text-4xl md:text-7xl font-bold tracking-wide transform -rotate-1 md:ml-4 text-center md:text-left">
                 <h1
                   className="font-black"
                   style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.1)" }}
@@ -66,12 +65,11 @@ const Home: React.FC = () => {
                   YADAV
                 </h1>
               </div>
-            
             </div>
           </div>
 
           {/* Links section */}
-          <div className="max-w-[700px] mx-auto mt-10 relative">
+          <div className="max-w-[700px] mx-auto mt-6 md:mt-10 relative">
            
             
             {/* Download Resume Button */}
@@ -117,44 +115,44 @@ const Home: React.FC = () => {
               </div>
             </div>
             {/* Tabs for different sections */}
-            <div className="mt-12 mb-8">
+            <div className="mt-8 md:mt-12 mb-6 md:mb-8">
               <Tabs
                 defaultValue={activeTab}
                 className="w-full"
                 onValueChange={setActiveTab}
               >
-                <TabsList className="grid w-full grid-cols-3 mb-8 border-2 border-black !rounded-button">
+                <TabsList className="grid w-full grid-cols-3 mb-6 md:mb-8 border-2 border-black !rounded-button">
                   <TabsTrigger
                     value="projects"
-                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap"
+                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap text-sm md:text-base px-2 md:px-4"
                   >
-                    <i className="fas fa-rocket mr-2"></i>Projects
+                    <i className="fas fa-rocket mr-1 md:mr-2"></i>Projects
                   </TabsTrigger>
                   <TabsTrigger
                     value="experience"
-                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap"
+                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap text-sm md:text-base px-2 md:px-4"
                   >
-                    <i className="fas fa-briefcase mr-2"></i>Experience
+                    <i className="fas fa-briefcase mr-1 md:mr-2"></i>Experience
                   </TabsTrigger>
                   <TabsTrigger
                     value="blog"
-                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap"
+                    className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap text-sm md:text-base px-2 md:px-4"
                   >
-                    <i className="fas fa-pen-fancy mr-2"></i>Blog
+                    <i className="fas fa-pen-fancy mr-1 md:mr-2"></i>Blog
                   </TabsTrigger>
                 </TabsList>
 
                 {/* Projects Tab Content */}
                 <TabsContent value="projects" className="mt-4">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center">
-                    <i className="fas fa-rocket mr-3"></i>
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
+                    <i className="fas fa-rocket mr-2 md:mr-3"></i>
                     Featured Projects
                   </h2>
 
                   {/* Bento Grid Layout for Projects */}
-                  <div className="grid grid-cols-12 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
                     {/* Featured Project - Large */}
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-1 md:col-span-6">
                       <ProjectCard
                         title="Ketamind - AI-Powered SaaS for Habit Building"
                         description="An AI-powered platform to help users build or break habits through personalized instructions and automated reminder calls, built with Next.js, Supabase, and n8n."
@@ -166,7 +164,7 @@ const Home: React.FC = () => {
                     </div>
 
                     {/* Secondary Project - Medium */}
-                    <div className="col-span-12 md:col-span-6">
+                    <div className="col-span-1 md:col-span-6">
                       <ProjectCard
                         title="Becha - AI Powered Chat Interface"
                         description="Real-time AI-driven content editor and context updater for customer support workflows, built with Next.js and WebSockets."
@@ -178,7 +176,7 @@ const Home: React.FC = () => {
                     </div>
 
                     {/* Additional Projects */}
-                    <div className="col-span-12 md:col-span-7">
+                    <div className="col-span-1 md:col-span-7">
                       <ProjectCard
                         title="SQL Agent"
                         description="An AI agent that translates natural language queries into SQL, executes them, and displays the results on a Next.js frontend."
@@ -189,7 +187,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-12 md:col-span-5">
+                    <div className="col-span-1 md:col-span-5">
                       <ProjectCard
                         title="Automatic GitHub PR Review System"
                         description="A system that uses AI to review GitHub pull requests automatically by generating and posting review comments, built with Next.js and NextAuth.js."
@@ -215,8 +213,8 @@ const Home: React.FC = () => {
 
                   {/* Extended Project List */}
                   {showAllProjects && (
-                    <div className="grid grid-cols-12 gap-4 mt-8 animate-fadeIn">
-                      <div className="col-span-12 md:col-span-6">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-6 md:mt-8 animate-fadeIn">
+                      <div className="col-span-1 md:col-span-6">
                         <ProjectCard
                           title="WorkChain"
                           description="A decentralized freelance platform inspired by Fiverr, integrating smart contracts for secure payments and dispute resolution, built using the MERN stack and blockchain."
@@ -225,7 +223,7 @@ const Home: React.FC = () => {
                           githubUrl="https://github.com/Bamania/workchain"
                         />
                       </div>
-                      <div className="col-span-12 md:col-span-6">
+                      <div className="col-span-1 md:col-span-6">
                         <ProjectCard
                           title="Digital Menu System"
                           description="A QR-based restaurant ordering system with real-time order tracking, item selection, and customer feedback features, built for GDSC IIT Roorkee."
@@ -234,7 +232,7 @@ const Home: React.FC = () => {
                           githubUrl="https://github.com/Bamania/digitalMenu"
                         />
                       </div>
-                      <div className="col-span-12">
+                      <div className="col-span-1 md:col-span-12">
                         <ProjectCard
                           title="Chrome Extension - Web Annotator"
                           description="A Chrome extension for web-based note-taking and content management, built with JavaScript, Local Storage, and html2pdf.js for exporting notes as PDF."
@@ -250,45 +248,44 @@ const Home: React.FC = () => {
 
                 {/* Experience Tab Content */}
                 <TabsContent value="experience" className="mt-4">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center">
-                    <i className="fas fa-briefcase mr-3"></i>
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
+                    <i className="fas fa-briefcase mr-2 md:mr-3"></i>
                     Work Experience
                   </h2>
 
-                  <div className="space-y-8">
-  <ExperienceCard
-    company="CreaxOs"
-    position="Software Developer Intern"
-    period="September 2024 - April 2025"
-    location="Remote"
-    description="Developed a cross-platform desktop application using Electron.js, React, and Tailwind CSS. Built a robust state management system with Redux and intercepted Twitter and Instagram APIs through a proxy server to extract and optimize insights."
-    skills={["Electron.js", "React", "Redux", "Next.js"]}
-    logo="https://framerusercontent.com/images/FrDeBbUcZ4A4Y4iokJhkV5vB5YU.png?scale-down-to=512"
-  />
+                  <div className="space-y-6 md:space-y-8">
+                    <ExperienceCard
+                      company="CreaxOs"
+                      position="Software Developer Intern"
+                      period="September 2024 - April 2025"
+                      location="Remote"
+                      description="Developed a cross-platform desktop application using Electron.js, React, and Tailwind CSS. Built a robust state management system with Redux and intercepted Twitter and Instagram APIs through a proxy server to extract and optimize insights."
+                      skills={["Electron.js", "React", "Redux", "Next.js"]}
+                      logo="https://framerusercontent.com/images/FrDeBbUcZ4A4Y4iokJhkV5vB5YU.png?scale-down-to=512"
+                    />
 
-  <ExperienceCard
-    company="INCO"
-    position="Frontend Developer Intern"
-    period="March 2024 - May 2024"
-    location="Remote"
-    description="Worked on a privacy-focused decentralized application (dApp). Designed and implemented responsive user interfaces using React.js and Tailwind CSS, ensuring seamless user experience aligned with best practices in decentralized web development."
-    skills={["React.js", "Tailwind CSS", "dApp"]}
-    logo="https://cdn.prod.website-files.com/671156d33ac264346e223043/67157664ef80e9650717a02e_logo%20(15).svg"
-  />
-</div>
-
+                    <ExperienceCard
+                      company="INCO"
+                      position="Frontend Developer Intern"
+                      period="March 2024 - May 2024"
+                      location="Remote"
+                      description="Worked on a privacy-focused decentralized application (dApp). Designed and implemented responsive user interfaces using React.js and Tailwind CSS, ensuring seamless user experience aligned with best practices in decentralized web development."
+                      skills={["React.js", "Tailwind CSS", "dApp"]}
+                      logo="https://cdn.prod.website-files.com/671156d33ac264346e223043/67157664ef80e9650717a02e_logo%20(15).svg"
+                    />
+                  </div>
                 </TabsContent>
 
                 {/* Blog Tab Content */}
                 <TabsContent value="blog" className="mt-4">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center">
-                    <i className="fas fa-pen-fancy mr-3"></i>
+                  <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
+                    <i className="fas fa-pen-fancy mr-2 md:mr-3"></i>
                     Latest Articles
                   </h2>
 
                   {/* Bento Grid Layout for Blog */}
-                  <div className="grid grid-cols-12 gap-4">
-                    <div className="col-span-12 md:col-span-8">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <div className="col-span-1 md:col-span-8">
                       <BlogCard
                         title="Learn to build an AI agent (from scratch + RAG)"
                         url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v-10069.6981.35760.20464.L6AKDpTrW5DiJ_EMmmDad"
@@ -299,7 +296,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-12 md:col-span-4">
+                    <div className="col-span-1 md:col-span-4">
                       <BlogCard
                         title="Mastering JS(THE HARD PARTS OF JS)"
                         url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11851.-9773.35760.20464.GPGVNlzPofcqS2CRrkcJ3"
@@ -308,8 +305,6 @@ const Home: React.FC = () => {
                         readTime="5 min read"
                       />
                     </div>
-
-                  
                   </div>
                 </TabsContent>
               </Tabs>
@@ -458,34 +453,34 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
     <Card className="border-2 border-black overflow-hidden bg-white shadow-[3px_3px_0px_rgba(0,0,0,0.2)]">
       <CardContent className="p-0">
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/4 bg-gray-50 p-6 border-r-2 border-black flex flex-col items-center justify-center">
-            <div className="w-20 h-20 mb-4">
+          <div className="w-full md:w-1/4 bg-gray-50 p-4 md:p-6 border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col items-center justify-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 mb-3 md:mb-4">
               <img
                 src={logo}
                 alt={company}
                 className="w-full h-full object-contain"
               />
             </div>
-            <h3 className="text-xl font-bold text-center">{company}</h3>
-            <p className="text-gray-500 text-center">{location}</p>
+            <h3 className="text-lg md:text-xl font-bold text-center">{company}</h3>
+            <p className="text-gray-500 text-center text-sm md:text-base">{location}</p>
           </div>
-          <div className="w-full md:w-3/4 p-6">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-              <h3 className="text-xl font-bold">{position}</h3>
+          <div className="w-full md:w-3/4 p-4 md:p-6">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3 md:mb-4">
+              <h3 className="text-lg md:text-xl font-bold">{position}</h3>
               <Badge
                 variant="outline"
-                className="mt-2 md:mt-0 border-2 border-black bg-gray-100"
+                className="mt-2 md:mt-0 border-2 border-black bg-gray-100 text-xs md:text-sm"
               >
                 {period}
               </Badge>
             </div>
-            <p className="text-gray-600 mb-6">{description}</p>
+            <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">{description}</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <Badge
                   key={index}
                   variant="outline"
-                  className="border-2 border-black bg-gray-100"
+                  className="border-2 border-black bg-gray-100 text-xs md:text-sm"
                 >
                   {skill}
                 </Badge>
