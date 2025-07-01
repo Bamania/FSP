@@ -115,13 +115,13 @@ const Home: React.FC = () => {
               </div>
             </div>
             {/* Tabs for different sections */}
-            <div className="mt-8 md:mt-12 mb-6 md:mb-8">
+            <div className="mt-8 md:mt-12 mb-6 md:mb-8 ">
               <Tabs
                 defaultValue={activeTab}
                 className="w-full"
                 onValueChange={setActiveTab}
               >
-                <TabsList className="grid w-full grid-cols-3 mb-6 md:mb-8 border-2 border-black !rounded-button">
+                <TabsList className="w-full flex md:mb-8 justify-center items-center border-black rounded-button">
                   <TabsTrigger
                     value="projects"
                     className="data-[state=active]:bg-black data-[state=active]:text-white !rounded-button whitespace-nowrap text-sm md:text-base px-2 md:px-4"
@@ -285,9 +285,9 @@ const Home: React.FC = () => {
 
                   {/* Bento Grid Layout for Blog */}
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div className="col-span-1 md:col-span-8">
+                    <div className="col-span-1 md:col-span-7">
                       <BlogCard
-                        title="Learn to build an AI agent (from scratch + RAG)"
+                        title="Building AI Agents: From Zero to RAG-Powered Intelligence"
                         url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v-10069.6981.35760.20464.L6AKDpTrW5DiJ_EMmmDad"
                         excerpt="Exploring emerging technologies and methodologies that will shape the future of web development in the coming years."
                         image={rag}
@@ -296,9 +296,9 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-1 md:col-span-4">
+                    <div className="col-span-1 md:col-span-5">
                       <BlogCard
-                        title="Mastering JS(THE HARD PARTS OF JS)"
+                        title="JavaScript Deep Dive: Understanding the Hard Parts"
                         url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11851.-9773.35760.20464.GPGVNlzPofcqS2CRrkcJ3"
                         excerpt="A comprehensive guide to learn the advance parts of the JS ,and how things work under the hood."
                         image={jsAdv}
