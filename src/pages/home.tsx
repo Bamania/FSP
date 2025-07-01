@@ -6,7 +6,6 @@ import rag from "@/assets/RAGnarok.png";
 import sql from "@/assets/sqlagent.png";
 import becha from "@/assets/Screenshot_1.png";
 import jsAdv from "@/assets/jsAdv.png";
-import resume from "@/assets/Resume.pdf";
 import { Calendar, File, Linkedin } from "lucide-react";
 import { TwitterIcon } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
@@ -16,10 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Home: React.FC = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [activeTab, setActiveTab] = useState("experience");
-
+        
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({"namespace":"15min"});
@@ -121,7 +119,7 @@ const Home: React.FC = () => {
             {/* Tabs for different sections */}
             <div className="mt-12 mb-8">
               <Tabs
-                defaultValue="experience"
+                defaultValue={activeTab}
                 className="w-full"
                 onValueChange={setActiveTab}
               >
@@ -393,11 +391,7 @@ const Home: React.FC = () => {
       {/* Interactive elements that follow cursor */}
       <div
         className="fixed w-6 h-6 pointer-events-none opacity-30 z-50"
-        style={{
-          left: `${cursorPosition.x + 20}px`,
-          top: `${cursorPosition.y - 10}px`,
-          transform: "rotate(15deg)",
-        }}
+       
       >
         <img
           src="https://placehold.co/400x300"
