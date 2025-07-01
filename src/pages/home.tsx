@@ -309,26 +309,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    {/* <div className="col-span-12 md:col-span-4">
-                      <BlogCard
-                        title="WebAssembly: A Beginner's Guide"
-                        url="May 28, 2025"
-                        excerpt="Understanding the basics of WebAssembly and how it's changing web performance."
-                        image="https://readdy.ai/api/search-image?query=WebAssembly%20concept%20illustration%2C%20code%20compilation%20visualization%2C%20web%20technology%20diagram%2C%20technical%20illustration%2C%20notebook%20paper%20texture%20background&width=400&height=300&seq=blog3&orientation=landscape"
-                        readTime="6 min read"
-                      />
-                    </div>
-
-                    <div className="col-span-12 md:col-span-8">
-                      <BlogCard
-                        title="Building Accessible Web Applications"
-                        url="May 10, 2025"
-                        excerpt="Best practices and techniques for creating web applications that are accessible to everyone, including users with disabilities."
-                        image="https://readdy.ai/api/search-image?query=Web%20accessibility%20illustration%2C%20inclusive%20design%20concept%2C%20diverse%20users%20interacting%20with%20interfaces%2C%20modern%20UI%2FUX%20design%2C%20notebook%20paper%20texture%20background&width=800&height=300&seq=blog4&orientation=landscape"
-                        readTime="10 min read"
-                        large={true}
-                      />
-                    </div> */}
+                  
                   </div>
                 </TabsContent>
               </Tabs>
@@ -336,62 +317,16 @@ const Home: React.FC = () => {
 
            
 
-            {/* Small note about design */}
-            {/* <div className="absolute right-[-10px] bottom-[-80px] transform rotate-12 text-xs text-gray-600">
-              <p>that's me</p>
-              <img
-                src="https://readdy.ai/api/search-image?query=Hand-drawn%20curved%20arrow%20pointing%20down%2C%20black%20sketch%20style%2C%20doodle%20on%20notebook%20paper%2C%20simple%20line%20art&width=80&height=80&seq=arrow2&orientation=squarish"
-                alt="Arrow pointing down"
-                className="w-16 h-16 object-contain"
-              />
-            </div> */}
+           
           </div>
 
-          {/* Robot doodle at bottom left */}
-          {/* <div className="relative right-2  bottom-10 ">
-            <img
-              src="https://readdy.ai/api/search-image?query=Hand-drawn%20robot%20doodle%2C%20cute%20cartoon%20style%2C%20black%20and%20white%20sketch%20on%20notebook%20paper%2C%20simple%20line%20art%2C%20small%20character&width=150&height=150&seq=robot1&orientation=squarish"
-              alt="Robot doodle"
-              className="w-28 h-28 object-contain"
-            />
-          </div> */}
-
-          {/* Small note about snail */}
-          {/* <div className="absolute left-[200px] top-[350px] transform -rotate-6 text-xs text-gray-600">
-            <p>
-              why does it
-              <br />
-              look like a<br />
-              SNAIL? ♥
-            </p>
-          </div> */}
-
-          {/* Designer credit */}
-          {/* <div className="absolute right-[40px] bottom-[20px] flex items-center text-sm text-gray-600">
-            <span className="mr-2">design by</span>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <div className="w-8 h-8 rounded-full border border-gray-300 overflow-hidden">
-                    <img
-                      src="https://readdy.ai/api/search-image?query=Minimalist%20avatar%20icon%2C%20simple%20line%20art%20style%2C%20black%20and%20white%20sketch%20on%20paper&width=50&height=50&seq=designer1&orientation=squarish"
-                      alt="Designer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </TooltipTrigger>
-              
-              </Tooltip>
-            </TooltipProvider>
-            <span className="ml-2">Maya</span>
-          </div> */}
+    
         </div>
       </div>
 
       {/* Interactive elements that follow cursor */}
       <div
         className="fixed w-6 h-6 pointer-events-none opacity-30 z-50"
-       
       >
         <img
           src="https://placehold.co/400x300"
@@ -452,7 +387,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-fill object-top"
+          className="w-full h-full object-cover object-top"
         />
       </div>
       <div className="p-6">
