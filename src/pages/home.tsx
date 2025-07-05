@@ -43,7 +43,7 @@ const PaperLoader: React.FC<{ onDone: () => void }> = ({ onDone }) => {
       </div>
       {/* Loader content */}
       <div className="relative z-10">
-        <div className="inline-block bg-gray-100 border-2 border-black  py-4 rounded-lg shadow-[2px_2px_0px_rgba(0,0,0,0.2)] font-mono text-xl text-black">
+        <div className="inline-block w-full px-2 bg-gray-100 border-2 border-black  py-4 rounded-lg shadow-[2px_2px_0px_rgba(0,0,0,0.2)] font-mono text-lg text-black">
           typeof aman === "fastShipper"{' '}
           {showTrue && (
             <>
