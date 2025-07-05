@@ -1,22 +1,69 @@
-// The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import rag from "@/assets/RAGnarok.png";
 import sql from "@/assets/sqlagent.png";
 import becha from "@/assets/Screenshot_1.png";
 import jsAdv from "@/assets/jsAdv.png";
-import { Calendar, File, Linkedin } from "lucide-react";
+import node from "@/assets/mentalModelForNode.png";
+import { Calendar, File, Linkedin, MessageSquareMoreIcon } from "lucide-react";
 import { TwitterIcon } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
+
 
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Loader component for the paper theme
+const PaperLoader: React.FC<{ onDone: () => void }> = ({ onDone }) => {
+  const [showTrue, setShowTrue] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowTrue(true), 1000);
+    const doneTimer = setTimeout(onDone, 1800);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(doneTimer);
+    };
+  }, [onDone]);
+
+  return (
+    <div className="min-h-screen bg-white overflow-hidden font-sans relative flex items-center justify-center">
+      {/* Paper background */}
+      <div className="w-full min-h-screen absolute top-0 left-0 z-0">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div
+            key={`h-line-loader-${i}`}
+            className="absolute w-full h-[1px] bg-blue-100"
+            style={{ top: `${(i + 1) * 40}px` }}
+          />
+        ))}
+        {/* Red margin line intentionally hidden during loader */}
+        {/* <div className="absolute h-full w-[1px] bg-red-400 left-[12px]  md:block" /> */}
+      </div>
+      {/* Loader content */}
+      <div className="relative z-10">
+        <div className="inline-block bg-gray-100 border-2 border-black  py-4 rounded-lg shadow-[2px_2px_0px_rgba(0,0,0,0.2)] font-mono text-xl text-black">
+          typeof aman === "fastShipper"{' '}
+          {showTrue && (
+            <>
+              <span className="ml-2 text-green-600 font-bold animate-fade-in">true</span>
+              <span className="ml-3 inline-block align-middle">
+                <svg className="w-6 h-6 text-green-500 inline" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Home: React.FC = () => {
+  const [showLoader, setShowLoader] = useState(true);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [activeTab, setActiveTab] = useState("experience");
+  const [showFullAbout, setShowFullAbout] = useState(false);
         
   useEffect(() => {
     (async function () {
@@ -24,6 +71,10 @@ const Home: React.FC = () => {
       cal("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#5d4747"},"dark":{"cal-brand":"#5d4747"}},"hideEventTypeDetails":false,"layout":"month_view"});
     })();
   }, []);
+
+  if (showLoader) {
+    return <PaperLoader onDone={() => setShowLoader(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-white overflow-hidden font-sans relative">
@@ -54,16 +105,20 @@ const Home: React.FC = () => {
                   />
                 </div>
               </div>
-              {/* Name */}
-              <div className="text-4xl md:text-7xl font-bold tracking-wide transform -rotate-1 md:ml-4 text-center md:text-left">
-                <h1
-                  className="font-black"
-                  style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.1)" }}
-                >
-                  AMAN
-                  <br />
-                  YADAV
-                </h1>
+              {/* Name with type integration */}
+              <div className="text-center md:text-left">
+                <div className="text-4xl md:text-7xl font-bold tracking-wide transform -rotate-1 md:ml-4">
+                  <h1
+                    className="font-black"
+                    style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.1)" }}
+                  >
+                    AMAN
+                    <br />
+                    YADAV
+                  </h1>
+                </div>
+                {/* Dev Insider Type Check */}
+               
               </div>
             </div>
           </div>
@@ -71,6 +126,41 @@ const Home: React.FC = () => {
           {/* Links section */}
           <div className="max-w-[700px] mx-auto mt-6 md:mt-10 relative">
            
+            {/* About Me Paragraph */}
+            <div className="mb-2 p-5 bg-white  border-2 border-black rounded-xl shadow-sm">
+              <div className="mb-2 font-semibold text-gray-800">tldr:</div>
+              <ul className="list-disc pl-6 text-left space-y-1 text-gray-700">
+                <li className="text-base">Full‑stack & GenAI is where my heart lies</li>
+                <li className="text-base">Built both full‑stack products and AI agents from scratch (check projects)</li>
+                <li className="text-base">Aggressively use AI to learn new tech on the go (check my blogs)</li>
+                <li className="text-base">Love shipping fast & writing clean code (still learning, lol)</li>
+                <li className="text-base">Outside of code: read markets (technical analysis), play guitar, and games</li>
+              </ul>
+            </div>
+            {/* Read More Button (outside box) */}
+            <div className="w-full">
+              <button
+                className="w-full mb-4 cursor-pointer transform transition-transform hover:scale-105 hover:-rotate-1"
+                style={{ border: 'none', background: 'none', padding: 0 }}
+                onClick={() => setShowFullAbout((v) => !v)}
+              >
+                <div className="w-full flex items-center bg-gray-100 border-2 border-black rounded-lg p-4 shadow-[3px_3px_0px_rgba(0,0,0,0.2)]">
+                  <div className="w-10 h-10 flex items-center justify-center mr-4 border-2 border-black rounded-md">
+                    {/* Lucide BookOpen icon */}
+                    <MessageSquareMoreIcon/>
+
+                  </div>
+                  <span className="text-xl font-medium">{showFullAbout ? 'Show Less' : 'Read More About Me'}</span>
+                </div>
+              </button>
+            </div>
+            {showFullAbout && (
+              <div className="mt-2 mb-6 text-gray-700 bg-gray-50 border-2 border-black rounded-lg shadow-[2px_2px_0px_rgba(0,0,0,0.2)] p-4 space-y-3 text-base leading-relaxed">
+                <p><span className="font-semibold">Currently a final year student at IIT Roorkee,</span> I started coding in my second year of college and have been coding ever since. Initially I got fascinated a lot by stock market and how it works, so yeah I used to read american authors and was really into it, devising my own system that could help me to navigate irrespective of market behaviours (<span className="font-semibold">Stan</span> and <span className="font-semibold">Mark Minervini</span> are my favs).</p>
+                <p>I learned everything I know about coding from <span className="font-semibold">YouTube</span>, <span className="font-semibold">StackOverflow</span>, and blogs (<span className="font-semibold">medium blogs</span> are my favs), mainly, and still learning everyday, trying to get most of my coding. I have built projects in <span className="font-semibold">Next.js</span>, <span className="font-semibold">React</span>, <span className="font-semibold">Node.js</span>, <span className="font-semibold">Supabase</span>, <span className="font-semibold">n8n</span>, <span className="font-semibold">Electron.js</span>, and more (explore the experience and projects tab to see more).</p>
+                <p>Apart from this, I love playing guitar and games, and I really hate the idea of building products from zero to 100 using <span className="font-semibold">AI</span> only, though I aggressively use <span className="font-semibold">AI</span> when I feel like using it (<span className="font-semibold">mostly learning lol, you will see this in my blogs</span>).</p>
+              </div>
+            )}
             
             {/* Download Resume Button */}
             <LinkButton
@@ -278,6 +368,7 @@ const Home: React.FC = () => {
 
                 {/* Blog Tab Content */}
                 <TabsContent value="blog" className="mt-4">
+                  <div className="mb-4 text-gray-900 italic text-sm">Note: Most of my blogs are written as personal notes, so expect concise, practical insights rather than long essays.😏</div>
                   <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center">
                     <i className="fas fa-pen-fancy mr-2 md:mr-3"></i>
                     Latest Articles
@@ -288,7 +379,7 @@ const Home: React.FC = () => {
                     <div className="col-span-1 md:col-span-7">
                       <BlogCard
                         title="Building AI Agents: From Zero to RAG-Powered Intelligence"
-                        url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v-10069.6981.35760.20464.L6AKDpTrW5DiJ_EMmmDad"
+                        url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v5931.6981.25520.15808.L6AKDpTrW5DiJ_EMmmDad"
                         excerpt="Exploring emerging technologies and methodologies that will shape the future of web development in the coming years."
                         image={rag}
                         readTime="8 min read"
@@ -299,9 +390,18 @@ const Home: React.FC = () => {
                     <div className="col-span-1 md:col-span-5">
                       <BlogCard
                         title="JavaScript Deep Dive: Understanding the Hard Parts"
-                        url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11851.-9773.35760.20464.GPGVNlzPofcqS2CRrkcJ3"
+                        url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11831.-4471.25248.15639.GPGVNlzPofcqS2CRrkcJ3"
                         excerpt="A comprehensive guide to learn the advance parts of the JS ,and how things work under the hood."
                         image={jsAdv}
+                        readTime="5 min read"
+                      />
+                    </div>
+                    <div className="col-span-1 md:col-span-12">
+                      <BlogCard
+                        title="Node.js Architecture: A High-Level Overview(not really)"
+                        url="https://www.tldraw.com/p/83k2C_lCSnVpGbhS-Q6ku?d=v552826.-7092.30720.15808.fbC7TX4BfJsHt4_Iwpqr-"
+                        excerpt="Prepared an indepth guide to show how actually node works under the hood,especially how the node actually auto runs and auto create objects"
+                        image={node}
                         readTime="5 min read"
                       />
                     </div>
