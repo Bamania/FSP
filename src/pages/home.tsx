@@ -5,6 +5,7 @@ import sql from "@/assets/sqlagent.png";
 import becha from "@/assets/Screenshot_1.png";
 import jsAdv from "@/assets/jsAdv.png";
 import node from "@/assets/mentalModelForNode.png";
+import recursion from "@/assets/recursion patterns.png";
 import { Calendar, File, Linkedin, MessageSquareMoreIcon } from "lucide-react";
 import { TwitterIcon } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
@@ -382,7 +383,7 @@ const Home: React.FC = () => {
                         url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v5931.6981.25520.15808.L6AKDpTrW5DiJ_EMmmDad"
                         excerpt="Exploring emerging technologies and methodologies that will shape the future of web development in the coming years."
                         image={rag}
-                        readTime="8 min read"
+                        readTime="Easy"
                         large={true}
                       />
                     </div>
@@ -393,16 +394,25 @@ const Home: React.FC = () => {
                         url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11831.-4471.25248.15639.GPGVNlzPofcqS2CRrkcJ3"
                         excerpt="A comprehensive guide to learn the advance parts of the JS ,and how things work under the hood."
                         image={jsAdv}
-                        readTime="5 min read"
+                        readTime="Hard"
                       />
                     </div>
-                    <div className="col-span-1 md:col-span-12">
+                    <div className="col-span-1 md:col-span-5">
                       <BlogCard
                         title="Node.js Architecture: A High-Level Overview(not really)"
                         url="https://www.tldraw.com/p/83k2C_lCSnVpGbhS-Q6ku?d=v552826.-7092.30720.15808.fbC7TX4BfJsHt4_Iwpqr-"
                         excerpt="Prepared an indepth guide to show how actually node works under the hood,especially how the node actually auto runs and auto create objects"
                         image={node}
-                        readTime="5 min read"
+                        readTime="Medium"
+                      />
+                    </div>
+                    <div className="col-span-1 md:col-span-7">
+                      <BlogCard
+                        title="Recursion Patterns  (mainly for arrays,questions attached !)"
+                        url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
+                        excerpt="Listing down all important recursion patterns ,still learning more about it ,I will keep updating this blog as I learn more "
+                        image={recursion}
+                        readTime="Medium"
                       />
                     </div>
                   </div>
