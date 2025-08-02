@@ -378,7 +378,7 @@ const Home: React.FC = () => {
 
                   {/* Bento Grid Layout for Blog */}
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div className="col-span-1 md:col-span-7">
+                    <div className="col-span-1 md:col-span-8">
                       <BlogCard
                         title="Building AI Agents: From Zero to RAG-Powered Intelligence"
                         url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v5931.6981.25520.15808.L6AKDpTrW5DiJ_EMmmDad"
@@ -389,7 +389,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-1 md:col-span-5">
+                    <div className="col-span-1 md:col-span-4">
                       <BlogCard
                         title="JavaScript Deep Dive: Understanding the Hard Parts"
                         url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11831.-4471.25248.15639.GPGVNlzPofcqS2CRrkcJ3"
@@ -398,7 +398,8 @@ const Home: React.FC = () => {
                         readTime="Hard"
                       />
                     </div>
-                    <div className="col-span-1 md:col-span-5">
+
+                    <div className="col-span-1 md:col-span-4">
                       <BlogCard
                         title="Node.js Architecture: A High-Level Overview(not really)"
                         url="https://www.tldraw.com/p/83k2C_lCSnVpGbhS-Q6ku?d=v552826.-7092.30720.15808.fbC7TX4BfJsHt4_Iwpqr-"
@@ -407,22 +408,26 @@ const Home: React.FC = () => {
                         readTime="Medium"
                       />
                     </div>
-                    <div className="col-span-1 md:col-span-7">
+
+                    <div className="col-span-1 md:col-span-8">
                       <BlogCard
-                        title="Recursion Patterns  (mainly for arrays,questions attached !)"
+                        title="Recursion Patterns (mainly for arrays,questions attached !)"
                         url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
                         excerpt="Listing down all important recursion patterns ,still learning more about it ,I will keep updating this blog as I learn more "
                         image={recursion}
                         readTime="Medium"
+                        large={true}
                       />
                     </div>
-                    <div className="col-span-1 md:col-span-7">
+
+                    <div className="col-span-1 md:col-span-12">
                       <BlogCard
-                      title="Understanding ML with Research Paper"
-                      url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
-                      excerpt="Exploring machine learning concepts through in-depth analysis of research papers and practical experimentation."
-                      image={researchpaper}
-                      readTime="Medium"
+                        title="Understanding ML with Research Paper"
+                        url="https://www.tldraw.com/p/CYpcrc2Ehe6uZeGc_QQ_x?d=v-1828.-1886.6709.4156.kYWMCIYEEtHs1OaBj5gyG"
+                        excerpt="Exploring machine learning concepts through in-depth analysis of research papers and practical experimentation."
+                        image={researchpaper}
+                        readTime="easy"
+                        large={true}
                       />
                     </div>
                   </div>
