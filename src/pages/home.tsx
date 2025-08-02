@@ -33,7 +33,7 @@ const PaperLoader: React.FC<{ onDone: () => void }> = ({ onDone }) => {
     <div className="min-h-screen bg-white overflow-hidden font-sans relative flex items-center justify-center">
       {/* Paper background */}
       <div className="w-full min-h-screen absolute top-0 left-0 z-0">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 70 }).map((_, i) => (
           <div
             key={`h-line-loader-${i}`}
             className="absolute w-full h-[1px] bg-blue-100"
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
       {/* Notebook paper background */}
       <div className="w-full min-h-screen relative bg-white">
         {/* Horizontal ruled lines */}
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 150 }).map((_, i) => (
           <div
             key={`h-line-${i}`}
             className="absolute w-full h-[1px] bg-blue-100"
@@ -418,11 +418,11 @@ const Home: React.FC = () => {
                     </div>
                     <div className="col-span-1 md:col-span-7">
                       <BlogCard
-                        title="Understanding ML with Research Paper"
-                        url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
-                        excerpt="Been learning Ml ,with research papers lately !"
-                        image={researchpaper}
-                        readTime="Medium"
+                      title="Understanding ML with Research Paper"
+                      url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
+                      excerpt="Exploring machine learning concepts through in-depth analysis of research papers and practical experimentation."
+                      image={researchpaper}
+                      readTime="Medium"
                       />
                     </div>
                   </div>
