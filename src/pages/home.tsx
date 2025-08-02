@@ -6,6 +6,7 @@ import becha from "@/assets/Screenshot_1.png";
 import jsAdv from "@/assets/jsAdv.png";
 import node from "@/assets/mentalModelForNode.png";
 import recursion from "@/assets/recursion patterns.png";
+import researchpaper from "@/assets/researchpaper.png"
 import { Calendar, File, Linkedin, MessageSquareMoreIcon } from "lucide-react";
 import { TwitterIcon } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
@@ -412,6 +413,15 @@ const Home: React.FC = () => {
                         url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
                         excerpt="Listing down all important recursion patterns ,still learning more about it ,I will keep updating this blog as I learn more "
                         image={recursion}
+                        readTime="Medium"
+                      />
+                    </div>
+                    <div className="col-span-1 md:col-span-7">
+                      <BlogCard
+                        title="Understanding ML with Research Paper"
+                        url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
+                        excerpt="Been learning Ml ,with research papers lately !"
+                        image={researchpaper}
                         readTime="Medium"
                       />
                     </div>
