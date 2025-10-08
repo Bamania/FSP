@@ -347,6 +347,15 @@ const Home: React.FC = () => {
 
                   <div className="space-y-6 md:space-y-8">
                     <ExperienceCard
+                      company="ArAi Labs"
+                      position="Full Stack Developer"
+                      period="July 2025 - Present"
+                      location="Remote"
+                      description="Sometimes I fix bugs, sometimes I help integrate and ship new tools for our agents , and sometimes I manage frontend state (React, Zustand, TanStack Query)."
+                      skills={["fastapi", "Agno", "zustand", "Next.js","TanStackquery"]}
+                      logo="https://media.licdn.com/dms/image/v2/D560BAQHEAof55-fqCQ/company-logo_100_100/company-logo_100_100/0/1738496646922?e=1762992000&v=beta&t=h_qC_wHNKate-r0RYCrs2hvgQvIvQJgayCJPOoL8dyk"
+                    />
+                    <ExperienceCard
                       company="CreaxOs"
                       position="Software Developer Intern"
                       period="September 2024 - April 2025"
@@ -411,9 +420,9 @@ const Home: React.FC = () => {
 
                     <div className="col-span-1 md:col-span-8">
                       <BlogCard
-                        title="Recursion Patterns (mainly for arrays,questions attached !)"
-                        url="https://www.tldraw.com/p/ievyIeMvdDhcXNoJUDovN?d=v-807.-171.2725.1688.p7Mlf_oz5Uh5LdxuWH3Fz"
-                        excerpt="Listing down all important recursion patterns ,still learning more about it ,I will keep updating this blog as I learn more "
+                        title="Data Structures and Algorithms"
+                        url="https://www.tldraw.com/p/o-ue65dCNxEHyb5mq8iyx?d=v85841.-1988.4845.2326.NRUj_OU0SA1zQtNCVKaRd"
+                        excerpt="A running list of important algorithms. I'm still learning and will update this blog as I discover more."
                         image={recursion}
                         readTime="Medium"
                         large={true}
