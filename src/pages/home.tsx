@@ -168,7 +168,8 @@ const Home: React.FC = () => {
             <LinkButton
               icon={    <File />}
               text="Download Resume"
-              href="https://bamania.blob.core.windows.net/portfolio/Resume.pdf"
+              // href="https://bamania.blob.core.windows.net/portfolio/Resume.pdf"
+              href="https://drive.google.com/file/d/1LZL4DCjMY_l8vA18hBZIUElhHrfveycu/view?usp=sharing"
             />
             
             {/* Twitter link */}
