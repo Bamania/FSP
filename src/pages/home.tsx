@@ -169,7 +169,7 @@ const Home: React.FC = () => {
             <LinkButton
               icon={    <File />}
               text="Download Resume"
-              // href="https://bamania.blob.core.windows.net/portfolio/Resume.pdf"
+              
               href="https://drive.google.com/file/d/1LZL4DCjMY_l8vA18hBZIUElhHrfveycu/view?usp=sharing"
             />
             
@@ -179,13 +179,7 @@ const Home: React.FC = () => {
               text="connect on twitter"
               href="https://x.com/bamann_irani"
             />
-            {/* Buy coffee link */}
-            {/* <LinkButton
-              icon={<i className="fas fa-coffee text-xl"></i>}
-              text="buy me a coffee"
-              href="https://buymeacoffee.com/alexparker"
-            /> */}
-            {/* LinkedIn link */}
+          
             <LinkButton
               icon={<Linkedin />}
               text="connect on linkedin"
@@ -420,15 +414,15 @@ const Home: React.FC = () => {
                       />
                     </div>
                       <div className="col-span-1">
-                      <BlogCard
-                        title="Getting started with Prometheus(THEORITICAL INTENSIVE)"
-                        url="https://www.tldraw.com/p/9EhLQP7O1pPbk3i_EUbP7?d=v-1502.-1591.10899.6574.qRRGdiG1T6Ramzvn5eg6A"
-                        excerpt="Exploring machine learning concepts through in-depth analysis of research papers and practical experimentation."
-                        image={prom}
-                        readTime="easy"
-                        large={true}
-                      />
-                    </div>
+                        <BlogCard
+                          title="Getting Started with Prometheus (Theoretical Deep Dive)"
+                          url="https://www.tldraw.com/p/9EhLQP7O1pPbk3i_EUbP7?d=v-1502.-1591.10899.6574.qRRGdiG1T6Ramzvn5eg6A"
+                          excerpt="If you don't know what Prometheus is, read this. I've gathered and summarized the key information I found online."
+                          image={prom}
+                          readTime="easy"
+                          large={true}
+                        />
+                      </div>
                     <div className="col-span-1">
                       <BlogCard
                         title="Data Structures and Algorithms"
