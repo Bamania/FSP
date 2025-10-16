@@ -7,6 +7,7 @@ import jsAdv from "@/assets/jsAdv.png";
 import node from "@/assets/mentalModelForNode.png";
 import recursion from "@/assets/recursion patterns.png";
 import researchpaper from "@/assets/researchpaper.png"
+import prom from "@/assets/prom.png"
 import { Calendar, File, Linkedin, MessageSquareMoreIcon } from "lucide-react";
 import { TwitterIcon } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
@@ -387,8 +388,8 @@ const Home: React.FC = () => {
                   </h2>
 
                   {/* Bento Grid Layout for Blog */}
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    <div className="col-span-1 md:col-span-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="col-span-1">
                       <BlogCard
                         title="Building AI Agents: From Zero to RAG-Powered Intelligence"
                         url="https://www.tldraw.com/p/YmIY-oThmfB7cDWtOMoia?d=v5931.6981.25520.15808.L6AKDpTrW5DiJ_EMmmDad"
@@ -399,7 +400,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-1 md:col-span-4">
+                    <div className="col-span-1">
                       <BlogCard
                         title="JavaScript Deep Dive: Understanding the Hard Parts"
                         url="https://www.tldraw.com/p/c9ZPw5wMLCdfGSp-g4spk?d=v-11831.-4471.25248.15639.GPGVNlzPofcqS2CRrkcJ3"
@@ -409,7 +410,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-1 md:col-span-4">
+                    <div className="col-span-1">
                       <BlogCard
                         title="Node.js Architecture: A High-Level Overview(not really)"
                         url="https://www.tldraw.com/p/83k2C_lCSnVpGbhS-Q6ku?d=v552826.-7092.30720.15808.fbC7TX4BfJsHt4_Iwpqr-"
@@ -418,8 +419,17 @@ const Home: React.FC = () => {
                         readTime="Medium"
                       />
                     </div>
-
-                    <div className="col-span-1 md:col-span-8">
+                      <div className="col-span-1">
+                      <BlogCard
+                        title="Getting started with Prometheus(THEORITICAL INTENSIVE)"
+                        url="https://www.tldraw.com/p/9EhLQP7O1pPbk3i_EUbP7?d=v-1502.-1591.10899.6574.qRRGdiG1T6Ramzvn5eg6A"
+                        excerpt="Exploring machine learning concepts through in-depth analysis of research papers and practical experimentation."
+                        image={prom}
+                        readTime="easy"
+                        large={true}
+                      />
+                    </div>
+                    <div className="col-span-1">
                       <BlogCard
                         title="Data Structures and Algorithms"
                         url="https://www.tldraw.com/p/o-ue65dCNxEHyb5mq8iyx?d=v85841.-1988.4845.2326.NRUj_OU0SA1zQtNCVKaRd"
@@ -430,7 +440,7 @@ const Home: React.FC = () => {
                       />
                     </div>
 
-                    <div className="col-span-1 md:col-span-12">
+                    <div className="col-span-1">
                       <BlogCard
                         title="Understanding ML with Research Paper"
                         url="https://www.tldraw.com/p/CYpcrc2Ehe6uZeGc_QQ_x?d=v-1828.-1886.6709.4156.kYWMCIYEEtHs1OaBj5gyG"
@@ -440,6 +450,8 @@ const Home: React.FC = () => {
                         large={true}
                       />
                     </div>
+
+                  
                   </div>
                 </TabsContent>
               </Tabs>
